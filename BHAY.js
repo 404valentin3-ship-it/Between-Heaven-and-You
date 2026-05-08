@@ -42,7 +42,7 @@ function typeNextParagraph() {
 
 function startGame() {
   const music = document.getElementById("bg-music");
-  music.volume = 0.6;
+  music.volume = 0.8;
   music.play();
 
   document.getElementById("start-screen").style.display = "none";
