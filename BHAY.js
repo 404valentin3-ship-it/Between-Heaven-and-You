@@ -32,9 +32,7 @@ function typeNextParagraph() {
         setTimeout(typeNextParagraph, 400);
       }
     }
-
     typeChar();
-
   } else {
     setTimeout(() => {
       choices.classList.add("visible");
@@ -43,19 +41,27 @@ function typeNextParagraph() {
 }
 
 function startGame() {
-  // user clicked!! now browser ALLOWS audio
   const music = document.getElementById("bg-music");
-  music.volume = 0.38;
+  music.volume = 0.6;
   music.play();
 
-  // hide start screen, show game
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game").style.display = "block";
 
-  // fade in location card then start typing
   setTimeout(() => {
     locationCard.classList.add("visible");
   }, 300);
 
   setTimeout(typeNextParagraph, 2000);
 }
+
+// --- NEW UPDATE START ---
+// This listens for when you click the "Next" link to go to page 2
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') === 'page2.html') {
+    const music = document.getElementById("bg-music");
+    // Save the current timestamp of the song
+    localStorage.setItem("musicTime", music.currentTime);
+  }
+});
+// --- NEW UPDATE END ---

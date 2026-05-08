@@ -29,9 +29,7 @@ function typeNextParagraph() {
         setTimeout(typeNextParagraph, 400);
       }
     }
-
     typeChar();
-
   } else {
     setTimeout(() => {
       choices.classList.add("visible");
@@ -41,12 +39,18 @@ function typeNextParagraph() {
 
 window.addEventListener("load", () => {
   const music = document.getElementById("bg-music");
-  music.volume = 0.08;
 
-  // page2 has no begin button so we just try to play
-  // it works here because the user already clicked "Next" to get here
+  // --- NEW UPDATE START ---
+  // Look for the saved time from the previous page
+  const savedTime = localStorage.getItem("musicTime");
+  if (savedTime) {
+    music.currentTime = parseFloat(savedTime);
+  }
+  // --- NEW UPDATE END ---
+
+  music.volume = 0.6;
   music.play().catch(() => {
-    // if it still blocks just silently fail
+    console.log("Audio play blocked or failed");
   });
 
   setTimeout(() => {
@@ -54,4 +58,12 @@ window.addEventListener("load", () => {
   }, 300);
 
   setTimeout(typeNextParagraph, 2000);
+});
+
+// Optional: Save time again if user clicks "Restart" to go back to index.html
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') === 'index.html') {
+    const music = document.getElementById("bg-music");
+    localStorage.setItem("musicTime", music.currentTime);
+  }
 });
