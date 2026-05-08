@@ -1,0 +1,103 @@
+#location-card {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 16px 24px;
+  margin: 0 auto 40px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+#location-card.visible {
+  opacity: 1;
+}
+
+#location-card p {
+    font-family: 'Playfair Display', serif;
+    margin: 4px 0;
+    color: #1a0a2e;
+    letter-spacing: 0.5em;
+}
+
+body {
+    background: linear-gradient(to bottom,
+    #f47fae,
+    #c9c9c9,
+    #ead7e3
+    );
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: rgb(41, 38, 38);
+    padding: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: large;
+}
+
+h1 {
+    font-family: 'Dancing Script', serif;
+}
+
+a {
+    background: #ce0059;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#story-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    line-height: 2.2;
+    text-align: left;
+}
+
+#choices {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#choices.visible {
+    opacity: 1;
+}
+
+#start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 16px;
+}
+
+#start-screen h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #1a0a2e;
+}
+
+#start-screen p {
+  font-family: 'Playfair Display', serif;
+  color: #1a0a2e;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+#start-screen button {
+  margin-top: 20px;
+  padding: 12px 32px;
+  background: transparent;
+  border: 1px solid #1a0a2e;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #1a0a2e;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+#start-screen button:hover {
+  background: rgba(255,255,255,0.3);
+}

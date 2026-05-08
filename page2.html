@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="BHAY.css">
+  <title>Between Heaven and You</title>
+</head>
+<body>
+
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- START SCREEN ON PAGE 2 TOO bc browser resets on every new page -->
+  <div id="start-screen" style="display:none;">
+  </div>
+
+  <div id="game">
+    <h1>Between Heaven and You</h1>
+    <div id="location-card">
+      <p id="location">Midtown Café — Table 6</p>
+      <p id="datetime">Monday, February 4th · 2:14 PM</p>
+    </div>
+    <div id="story-text"></div>
+    <div id="choices">
+      <a href="index.html">Restart?</a>
+    </div>
+  </div>
+
+  <script src="page2.js"></script>
+</body>
+</html>
