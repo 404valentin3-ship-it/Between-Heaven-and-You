@@ -45,7 +45,7 @@ function typeNextParagraph() {
 function startGame() {
   // user clicked!! now browser ALLOWS audio
   const music = document.getElementById("bg-music");
-  music.volume = 0.08;
+  music.volume = 0.38;
   music.play();
 
   // hide start screen, show game
